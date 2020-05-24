@@ -18,7 +18,7 @@ export class AppComponent {
     Name: 'John Lydon',
     Message: 'Theres nothing glorious in dying. Anyone can do it.'
   }];
-  newMessage : string ;
+  newMessage  = 'hiii';
   sendMessage() {
     console.log(this.newMessage);
   }
