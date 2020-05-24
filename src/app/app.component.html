@@ -1,0 +1,34 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="container" ng-cloak ng-app="chatApp">
+  <h1>Chat Box</h1>
+  <div class="chatbox" ng-controller="MessageCtrl as chatMessage">
+    <div class="chatbox__user-list">
+      <h1>User list</h1>
+      <div class="chatbox__user--active">
+        <p>Jack Thomson</p>
+      </div>
+      <div class="chatbox__user--busy">
+        <p>Angelina Jolie</p>
+      </div>
+      <div class="chatbox__user--active">
+        <p>George Clooney</p>
+      </div>
+      <div class="chatbox__user--active">
+        <p>Seth Rogen</p>
+      </div>
+
+    </div>
+    <div class="chatbox__messages" ng-repeat="message in messages">
+      <div class="chatbox__messages__user-message">
+        <div *ngFor="let message of messages" class="chatbox__messages__user-message--ind-message">
+          <p class="name">{{ message.Name }}</p>
+          <br />
+          <p class="message">{{ message.Message }}</p>
+        </div>
+      </div>
+    </div>
+    <form>
+      <input type="text" [(ngModel)]="fullName" placeholder="Enter your message" ><i class="material-icons" (click)="sendMessage()" >&#xe163;</i>
+    </form>
+  </div>
+</div>
